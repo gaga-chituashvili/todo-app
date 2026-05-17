@@ -38,11 +38,12 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 4000
 
-async function start() {
-  await prisma.$connect()
-  app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Server running on http://localhost:${PORT}`))
+if (process.env.NODE_ENV !== 'test') {
+  async function start() {
+    await prisma.$connect()
+    app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Server running on http://localhost:${PORT}`))
+  }
+  start().catch(console.error)
 }
-
-start().catch(console.error)
 
 export { app }
