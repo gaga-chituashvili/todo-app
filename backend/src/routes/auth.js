@@ -11,3 +11,6 @@ router.post('/refresh', refresh)
 router.get('/me', authenticate, getMe)
 
 export default router
+
+import { updateMe } from '../controllers/auth.controller.js'
+router.patch('/me', authenticate, updateMe)
