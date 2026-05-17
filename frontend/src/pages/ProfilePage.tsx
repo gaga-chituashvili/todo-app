@@ -23,8 +23,8 @@ export default function ProfilePage() {
       setUser(data)
       setEditing(false)
       toast.success('Profile updated!')
-    } catch (err: any) {
-      toast.error(err.response?.data?.error || 'Failed to update')
+    } catch (err: unknown) {
+      toast.error((err as { response?: { data?: { error?: string } } }).response?.data?.error || 'Failed to update')
     } finally {
       setIsLoading(false)
     }
