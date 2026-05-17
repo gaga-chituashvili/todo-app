@@ -26,6 +26,7 @@ A full-stack todo management application with authentication, protected routes, 
 - Jest + Supertest (tests)
 
 ## Project Structure
+```
 todo-app/
 ├── backend/
 │   ├── src/
@@ -46,6 +47,7 @@ todo-app/
 ├── store/           # auth (zustand)
 ├── lib/             # axios
 └── types/           # TypeScript types
+```
 
 ## Local Setup
 
